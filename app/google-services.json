@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "426054309157",
+    "firebase_url": "https://nit-jamshedpur-archives1-2.firebaseio.com",
+    "project_id": "nit-jamshedpur-archives1-2",
+    "storage_bucket": "nit-jamshedpur-archives1-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426054309157:android:89df280ade02fcf780f6cc",
+        "android_client_info": {
+          "package_name": "com.example.nitjamshedpurarchives12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426054309157-vhd2c7ost5otob2ug8evubl5me4pn1c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk4W4WtezDYpF8uKtTa79kXZo__GgaGww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426054309157-vhd2c7ost5otob2ug8evubl5me4pn1c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
