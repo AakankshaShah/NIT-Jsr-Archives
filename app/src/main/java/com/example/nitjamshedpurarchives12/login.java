@@ -24,7 +24,7 @@ import android.widget.Toast;
 public class login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText loginEmail,loginPassword;
-    Button login;
+    Button login,continueLog,signoutButton;
     String loginEmailString,loginPasswordString;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -39,17 +39,22 @@ public class login extends AppCompatActivity {
         login=findViewById(R.id.Login);
         loginEmailString=loginEmail.getText().toString();
         loginPasswordString=loginPassword.getText().toString();
+        continueLog=findViewById(R.id.continueLog);
+        signoutButton=findViewById(R.id.signoutButton);
+        continueLog.setEnabled(false);
+        signoutButton.setEnabled(false);
 
         mAuthListener=new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth)
             {
                 if(firebaseAuth.getCurrentUser()!=null)
+                {
+                    Toast.makeText(login.this, "Logged", Toast.LENGTH_SHORT).show();
+                    continueLog.setEnabled(true);
+                    signoutButton.setEnabled(true);
+                }
 
-                Toast.makeText(login.this,"Already Logged",Toast.LENGTH_SHORT).show();
-                Intent loggedInt=new Intent(login.this,LoginscreenActivity.class);
-
-                startActivity(loggedInt);
             }
         };
 
@@ -65,13 +70,26 @@ public class login extends AppCompatActivity {
         mAuth.addAuthStateListener(mAuthListener);
         //updateUI(currentUser);
     }
+public void continuedLogClicked(View view)
+{
 
+    Intent loggedInt=new Intent(login.this,LoginscreenActivity.class);
+
+    startActivity(loggedInt);
+}
+public void signoutClicked(View view)
+{
+    FirebaseAuth.getInstance().signOut();
+    Toast.makeText(login.this,"You have successfully signed out",Toast.LENGTH_SHORT).show();
+    Intent backtohome=new Intent(login.this,homepage.class);
+    startActivity(backtohome);
+}
     public void loginClicked(View view) {
         loginEmailString=loginEmail.getText().toString();
         loginPasswordString=loginPassword.getText().toString();
         if (loginPasswordString.isEmpty() && loginEmailString.isEmpty())
         {
-Toast.makeText(login.this,"Enter valid email and pasword",Toast.LENGTH_SHORT).show();
+Toast.makeText(login.this,"Enter valid email and password",Toast.LENGTH_SHORT).show();
         } else
             {
             mAuth.signInWithEmailAndPassword(loginEmailString, loginPasswordString)

@@ -7,6 +7,24 @@
     android:background="@drawable/croplog"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <Button
+        android:id="@+id/continueLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="163dp"
+        android:layout_marginLeft="163dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_marginBottom="133dp"
+        android:enabled="false"
+        android:onClick="continuedLogClicked"
+        android:text="Already Logged In-Continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/loginEmail"
         android:layout_width="358dp"
@@ -60,7 +78,25 @@
         android:layout_marginRight="160dp"
         android:layout_marginBottom="235dp"
         android:onClick="loginClicked"
-        android:text="Button"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/signoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="281dp"
+        android:layout_marginLeft="281dp"
+        android:layout_marginTop="895dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginRight="281dp"
+        android:layout_marginBottom="299dp"
+        android:enabled="false"
+        android:onClick="signoutClicked"
+        android:text="Signout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
